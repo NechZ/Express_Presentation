@@ -1,28 +1,43 @@
 const http = require('http');
+const readline = require('readline');
 
 const options = {
     hostname: 'localhost',
     port: 3000,
-    path: '/index.html',
+    path: '/',
     method: 'GET'
 };
 
-const req = http.request(options, (res) => {
-    let data = '';
+console.log("Running Client");
 
-    res.on('data', (chunk) => {
-        data += chunk;
-    });
-
-    res.on('end', () => {
-        console.log(data);
-    });
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
 });
 
-console.log("Running Client")
+rl.on('line', (input) => {
+    options.path = "/" + input;
 
-req.on('error', (error) => {
-    console.error(error);
+    const req = http.request(options, (res) => {
+        let data = '';
+
+        res.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        res.on('end', () => {
+            console.log(data);
+        });
+    });
+
+    req.on('error', (error) => {
+        console.error(error);
+    });
+
+    req.end();
 });
 
-req.end();
+rl.on('close', () => {
+    console.log('Exiting Client');
+    process.exit(0);
+});

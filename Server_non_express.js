@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-    // Check if the request is for the root path
-    if (req.url === '/index.html') {
-        // Read the index.html file
-        fs.readFile(path.join(__dirname, 'index.html'), (err, data) => {
+    // Check if the request is not for the root path
+    if (req.url !== '/') {
+        // Read the requested file
+        fs.readFile(path.join(__dirname, req.url), (err, data) => {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
                 res.end('Internal Server Error');
