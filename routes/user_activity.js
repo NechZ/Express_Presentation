@@ -8,6 +8,4 @@ router.get('/', (req, res) => {
     console.log('Activity in Years:', activity);
 });
 
-
-
 module.exports = router;

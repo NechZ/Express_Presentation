@@ -14,6 +14,8 @@ app.get('/', (req, res) => {
     res.send("Hm");
 });
 
+
+// importing user router with the prefix /user
 const userRouter = require('./routes/user');
 app.use('/user', userRouter);
 
