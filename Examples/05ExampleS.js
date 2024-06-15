@@ -1,5 +1,8 @@
 const express = require('express');
 const userRouter = require('./routes/user');
+const AdminRouter = require('./routes/admin');
+const forms = require('./routes/forms');
+const Bestellung = require('./routes/Bestellung');
 
 const app = express();
 const port = 3000;
@@ -13,4 +16,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/user', userRouter);
+app.use('/admin', AdminRouter);
+app.use('/forms', forms);
+app.zse('/Bestellung', Bestellung);
+
 
