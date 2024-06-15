@@ -4,10 +4,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.get('/view/:filename', (req, res) => {
-    const filename = req.params.filename;
-    res.status(200).sendFile(path.join(__dirname + '/view', filename));
-});
+app.use(express.static("public"))
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
