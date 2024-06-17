@@ -8,11 +8,15 @@ const users = [{ name: 'John' }, { name: 'Jane' }, { name: 'Jim' }];
 
 // static methods
 router.get('/', (req, res) => {
-    res.send('Users');
+    res.send('Loading Users...');
+});
+
+router.post('/', (req, res) => {
+    res.send('Generating User...');
 });
 
 router.get('/new', (req, res) => {
-    res.send('New User Form');
+    res.send('Loading New User Form...');
 });
 
 // dynamic Methods

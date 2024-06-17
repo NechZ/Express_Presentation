@@ -18,12 +18,5 @@ app.get('/user', (req, res) => {
 app.get('/user/new', (req, res) => {
     res.sendFile('./public/user_new.html', { root: __dirname });
 });
-app.get('/user/1', (req, res) => {
-    res.send('User 1');
-});
-
-app.get('/user/1/edit', (req, res) => {
-    res.send('User 1 Edit Form');
-});
 
 

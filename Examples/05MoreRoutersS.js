@@ -18,6 +18,6 @@ app.get('/', (req, res) => {
 app.use('/user', userRouter);
 app.use('/admin', AdminRouter);
 app.use('/forms', forms);
-app.zse('/Bestellung', Bestellung);
+app.use('/Bestellung', Bestellung);
 
 

@@ -1,5 +1,5 @@
 const express = require('express');
-//const userRouter = require('./routes/user');
+const userRouter = require('./routes/user');
 
 const app = express();
 const port = 3000;
@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
     res.sendFile('./public/index.html', { root: __dirname });
 });
 
-//app.use('/user', userRouter);
+app.use('//', userRouter);
 
