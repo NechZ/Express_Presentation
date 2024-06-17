@@ -1,24 +1,3 @@
 {
-  "users": [
-    {
-      "name": "Nechirvan Zibar",
-      "email": "nechervanzibar@gmail.com",
-      "password": "sdsds"
-    },
-    {
-      "name": "Max",
-      "email": "max@gmail.com",
-      "password": "fdsfdfs"
-    },
-    {
-      "name": "danny",
-      "email": "danny@gmail.com",
-      "password": "ynnad2015"
-    },
-    {
-      "name": "danny",
-      "email": "danny@gmail.com",
-      "password": "fdsds"
-    }
-  ]
+  "users": []
 }
