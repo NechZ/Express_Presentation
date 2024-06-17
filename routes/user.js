@@ -3,9 +3,6 @@ const express = require('express');
 // Creating a Router
 const router = express.Router();
 
-// Dummy Data
-const users = [{ name: 'John' }, { name: 'Jane' }, { name: 'Jim' }];
-
 // static methods
 router.get('/', (req, res) => {
     res.send('Loading Users...');
@@ -32,12 +29,6 @@ router
         res.send(`User ${req.params.id}`);
     });
 
-// Logging dynamic parameters
-router.param('id', (req, res, next, id) => {
-    req.user = users[id];
-    console.log('User:', req.user);
-    next();
-});
 
 // Importing nested user_activity Router
 const user_activity_Router = require('./user_activity');
