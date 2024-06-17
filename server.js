@@ -10,7 +10,7 @@ const port = 3000;
 
 // Read
 app.get("/", (req, res) => {
-    res.send("<h1>Hallo Welt</h1>");
+    res.sendFile(path.join(__dirname, "public/download.html"));
 })
 
 app.get("/redirect", (req, res) => {
