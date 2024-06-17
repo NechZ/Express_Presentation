@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
 const port = 3000;
 
 //CRUD - Create, Read, Update, Delete
 //Grundlegende Operationen von Servern
 
-// Read
+//Read
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
 })
@@ -30,29 +29,9 @@ app.get("/json", (req, res) => {
 
 // Create
 app.post("/", (req, res) => {
-    res.send("User wurde angelegt")
+    res.send("User wurde angelegt");
 })
-
-// Update
-app.put("/", (req, res) => {
-    res.send("Alle Daten wurden aktualisiert")
-})
-
-// Delete
-app.delete("/", (req, res) => {
-    res.send("Alle Daten gelöscht!!!")
-})
-
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-
-
-
-
-
-
-
-//app.use(express.static('public'));
