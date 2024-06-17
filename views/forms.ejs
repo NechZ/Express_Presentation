@@ -8,7 +8,7 @@
     <% if (locals.message) { %>
         <p><%= locals.message %></p>
     <% } %>
-    <form action="/api/users" method="POST">
+    <form action="/routes/users" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<%=locals.name%>" required><br><br>
         

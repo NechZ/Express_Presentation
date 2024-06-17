@@ -5,7 +5,6 @@ const path = require('path')
 const router = express.Router();
 
 router.use(express.json())
-
 router.use(jsonmidware)
 
 router.post('/', (req, res) => {
@@ -31,7 +30,7 @@ router.post('/', (req, res) => {
         }
     });
 
-    res.sendStatus(200);
+    res.status(200).render('success');
 });
 
 // Middleware
